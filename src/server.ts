@@ -6,16 +6,20 @@ import {
 } from 'fastify-type-provider-zod';
 import { fastifyCors } from '@fastify/cors';
 import 'dotenv/config';
-import dotenv from 'dotenv';
 import { env } from './env.ts';
-import { getRoonsRoute } from './http/routes/get-rooms.ts';
+import { getRoomsRoute } from './http/routes/get-rooms.ts';
+import { createRoomRoute } from './http/routes/create-room.ts';
+import { getRoomQuestions } from './http/routes/get-room-questions.ts';
+import fastifyMultipart from '@fastify/multipart';
 
-dotenv.config();
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.register(fastifyCors, {
   origin: 'http://localhost:5173',
 });
+
+app.register(fastifyMultipart)
+
 
 app.setSerializerCompiler(serializerCompiler);
 app.setValidatorCompiler(validatorCompiler);
@@ -24,8 +28,9 @@ app.get('/health', () => {
   return 'OK';
 });
 
-app.register(getRoonsRoute)
-
+app.register(getRoomsRoute)
+app.register(createRoomRoute)
+app.register(getRoomQuestions)
 
 
 app.listen({ port: env.PORT })

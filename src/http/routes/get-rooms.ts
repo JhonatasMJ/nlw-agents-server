@@ -4,7 +4,7 @@ import { db } from "../../db/connection.ts";
 
 
 
-export const getRoonsRoute: FastifyPluginCallbackZod = (app) => {
+export const getRoomsRoute: FastifyPluginCallbackZod = (app) => {
   app.get("/rooms", async () => {
     const results = await db
       .select({
