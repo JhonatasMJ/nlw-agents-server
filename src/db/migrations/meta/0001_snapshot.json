@@ -1,6 +1,6 @@
 {
-  "id": "cec5e9fb-c3ff-4ae5-b5d0-e8a82639c2c8",
-  "prevId": "3273161d-704f-4cbd-a98b-7386ec65fe08",
+  "id": "336eddc1-eeae-479a-8864-abf63ce50606",
+  "prevId": "b5169c49-1fb3-4971-9599-c97b08b9c3e4",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -18,6 +18,12 @@
         "room_id": {
           "name": "room_id",
           "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "question": {
+          "name": "question",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
