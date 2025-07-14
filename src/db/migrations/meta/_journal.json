@@ -15,6 +15,13 @@
       "when": 1752153840621,
       "tag": "0001_charming_black_tarantula",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752372232721,
+      "tag": "0002_rapid_rocket_racer",
+      "breakpoints": true
     }
   ]
 }
